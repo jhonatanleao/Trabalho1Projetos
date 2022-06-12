@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package frames;
+package view;
 
 /**
  *
  * @author mathe
  */
-public class BuscarFuncionarioFrame extends javax.swing.JFrame {
+public class BuscarFuncionarioView extends javax.swing.JFrame {
 
     /**
      * Creates new form BuscarFuncionarioFrame
      */
-    public BuscarFuncionarioFrame() {
+    public BuscarFuncionarioView() {
         initComponents();
     }
 
@@ -145,20 +145,21 @@ public class BuscarFuncionarioFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuscarFuncionarioFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFuncionarioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuscarFuncionarioFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFuncionarioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuscarFuncionarioFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFuncionarioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuscarFuncionarioFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFuncionarioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscarFuncionarioFrame().setVisible(true);
+                new BuscarFuncionarioView().setVisible(true);
             }
         });
     }

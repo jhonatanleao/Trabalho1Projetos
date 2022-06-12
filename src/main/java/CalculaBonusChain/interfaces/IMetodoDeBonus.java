@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
+package CalculaBonusChain.interfaces;
 
 import model.Funcionario;
 
@@ -12,5 +12,8 @@ import model.Funcionario;
  * @author Geovane
  */
 public interface IMetodoDeBonus {
+    
     public void calculaBonus(Funcionario funcionario);
+    
+    public void setProximo(IMetodoDeBonus metodoBonus);
 }

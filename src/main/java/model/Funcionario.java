@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Geovane
@@ -20,7 +22,7 @@ public class Funcionario {
     private int QtdMembroFamilia;
     private double DistanciaTrabalho;
     private double ValorTotalBonus;
-    private Bonus bonus;
+    private ArrayList<Bonus> bonus;
 
     public Funcionario(String Nome, int Idade, double Salario, double SalarioBase, String Cargo, int Falta, int TempoServico, int QtdMembroFamilia, double DistanciaTrabalho, double ValorTotalBonus) {
         this.Nome = Nome;
@@ -33,6 +35,7 @@ public class Funcionario {
         this.QtdMembroFamilia = QtdMembroFamilia;
         this.DistanciaTrabalho = DistanciaTrabalho;
         this.ValorTotalBonus = ValorTotalBonus;
+        this.bonus = new ArrayList<Bonus>();
     }
 
     public String getNome() {
@@ -115,12 +118,12 @@ public class Funcionario {
         this.ValorTotalBonus = ValorTotalBonus;
     }
     
-    public Bonus getBonus() {
-        return bonus;
+    public ArrayList<Bonus> getBonus() {
+        return this.bonus;
     }
 
     public void setBonus(Bonus bonus) {
-        this.bonus = bonus;
+        this.bonus.add(bonus);
     }
     
      @Override
