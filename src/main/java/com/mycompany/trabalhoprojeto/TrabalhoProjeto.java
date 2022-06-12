@@ -6,6 +6,8 @@
 package com.mycompany.trabalhoprojeto;
 
 import CalculaBonusChain.CalculaBonus;
+import CalculadoraSalario.CalculaSalarioPadrao;
+import CalculadoraSalario.CalculadoraSalarioService;
 import dao.LogDao;
 import dto.LogDTO;
 import java.util.ArrayList;
@@ -39,6 +41,10 @@ public class TrabalhoProjeto {
         for(Bonus bonus : listBonus){
             System.out.println(bonus);
         }
+        
+        CalculadoraSalarioService calculadoraService = new CalculadoraSalarioService();
+        CalculaSalarioPadrao calculadora = new CalculaSalarioPadrao();
+        calculadoraService.calculaSalario(calculadora, funcionario);
         
         System.out.println(funcionario.getSalario() + " " + funcionario.getValorTotalBonus());
         
