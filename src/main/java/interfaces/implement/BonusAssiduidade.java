@@ -23,9 +23,9 @@ public class BonusAssiduidade implements IMetodoDeBonus{
         else if(funcionario.getFalta() == 1 || funcionario.getFalta() <= 3)
             funcionario.setBonus(new Bonus("Entre 1 a 3 faltas ",1.05, LocalDate.now()));
         else if(funcionario.getFalta()== 4 || funcionario.getFalta() == 5)
-            funcionario.setBonus(new Bonus("Possui 4 ou 5 faltas",1.05, LocalDate.now()));
+            funcionario.setBonus(new Bonus("Possui 4 ou 5 faltas",1.01, LocalDate.now()));
         else if(funcionario.getFalta()>= 6)
-            funcionario.setBonus(new Bonus("Possui 6 faltas ou mais ",1.07, LocalDate.now()));
+            funcionario.setBonus(new Bonus("Possui 6 faltas ou mais ",1.01, LocalDate.now()));
     }
         
 }

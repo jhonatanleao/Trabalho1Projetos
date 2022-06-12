@@ -20,7 +20,7 @@ public class Funcionario {
     private int QtdMembroFamilia;
     private double DistanciaTrabalho;
     private double ValorTotalBonus;
-    public Bonus bonus;
+    private Bonus bonus;
 
     public Funcionario(String Nome, int Idade, double Salario, double SalarioBase, String Cargo, int Falta, int TempoServico, int QtdMembroFamilia, double DistanciaTrabalho, double ValorTotalBonus) {
         this.Nome = Nome;
@@ -121,6 +121,11 @@ public class Funcionario {
 
     public void setBonus(Bonus bonus) {
         this.bonus = bonus;
+    }
+    
+     @Override
+    public String toString() {
+        return ("O funcionário possui os seguintes dados: Nome: " + Nome + " | Idade: " + Idade + " | Salário final = " + Salario + " | Salario Base = " + SalarioBase + " | Cargo = " + Cargo + " | Quantidade de faltas = " + Falta + " | Tempo de serviço = " + TempoServico + " | Quantidade de membros da família na mesma residência = " + QtdMembroFamilia + " | Distância do trabalho = " + DistanciaTrabalho + " | Valor total de bônus rececibos no mês = " + ValorTotalBonus);
     }
 
 }
