@@ -5,8 +5,6 @@
  */
 package model;
 
-import java.time.LocalDate;
-
 /**
  *
  * @author Geovane
@@ -14,12 +12,14 @@ import java.time.LocalDate;
 public class Bonus {
     private String Nome;
     private double Valor;
-    private LocalDate Data;
+    private String Data;
 
-    public Bonus(String Nome, double Valor, LocalDate Data) {
+    public Bonus(String Nome, double Valor) {
         this.Nome = Nome;
         this.Valor = Valor;
-        this.Data = Data;
+    }
+
+    public Bonus() {
     }
 
     public String getNome() {
@@ -30,8 +30,12 @@ public class Bonus {
         return Valor;
     }
     
-    public LocalDate getData() {
+    public String getData() {
         return Data;
+    }
+
+    public void setData(String Data) {
+        this.Data = Data;
     }
     
     @Override

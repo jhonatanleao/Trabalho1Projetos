@@ -22,13 +22,13 @@ public class BonusAssiduidade implements IMetodoDeBonus{
     @Override
     public void calculaBonus(Funcionario funcionario) {
         if(funcionario.getFalta() == 0)
-            funcionario.setBonus(new Bonus("0 faltas ",0.10, LocalDate.now()));
+            funcionario.setBonus(new Bonus("0 faltas ",0.10));
         else if(funcionario.getFalta() == 1 || funcionario.getFalta() <= 3)
-            funcionario.setBonus(new Bonus("Entre 1 a 3 faltas ",0.05, LocalDate.now()));
+            funcionario.setBonus(new Bonus("Entre 1 a 3 faltas ",0.05));
         else if(funcionario.getFalta()== 4 || funcionario.getFalta() == 5)
-            funcionario.setBonus(new Bonus("Possui 4 ou 5 faltas",0.01, LocalDate.now()));
+            funcionario.setBonus(new Bonus("Possui 4 ou 5 faltas",0.01));
         else if(funcionario.getFalta()>= 6)
-            funcionario.setBonus(new Bonus("Possui 6 faltas ou mais ",0.01, LocalDate.now()));
+            funcionario.setBonus(new Bonus("Possui 6 faltas ou mais ",0.01));
         
         this.proximo.calculaBonus(funcionario);
     }

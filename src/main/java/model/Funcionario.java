@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author Geovane
  */
 public class Funcionario {
+    private int id;
     private String Nome;
     private int Idade;
     private double Salario;
@@ -38,6 +39,17 @@ public class Funcionario {
         this.bonus = new ArrayList<Bonus>();
     }
 
+    public Funcionario() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return Nome;
     }

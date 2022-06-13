@@ -29,7 +29,7 @@ public class BonusDao {
             int id = consultaFuncionarioID.getIdByName(nome); 
             
             
-            stmt = con.prepareStatement("INSERT INTO Bonus (idFuncionario, nome, valor) VALUES (?, ?, ?) ");            
+            stmt = con.prepareStatement("INSERT INTO Bonus (idFuncionario, nome, data, valor) VALUES (?, ?, CURRENT_DATE(), ?)");            
             stmt.setInt(1, id);
             stmt.setString(2, bonus.getNome());
             stmt.setDouble(3, bonus.getValor());
@@ -53,7 +53,7 @@ public class BonusDao {
             int id = consultaFuncionarioID.getIdByName(nome); 
             
             for(BonusDTO bonus : bonusList){
-                stmt = con.prepareStatement("INSERT INTO Bonus (idFuncionario, nome, valor) VALUES (?, ?, ?) ");            
+                stmt = con.prepareStatement("INSERT INTO Bonus (idFuncionario, nome, data, valor) VALUES (?, ?, CURRENT_DATE(), ?)");            
                 stmt.setInt(1, id);
                 stmt.setString(2, bonus.getNome());
                 stmt.setDouble(3, bonus.getValor());
@@ -87,6 +87,7 @@ public class BonusDao {
                 bonus.setIdBonus(rs.getInt("idBonus"));
                 bonus.setIdFuncionario(rs.getInt("idFuncionario"));
                 bonus.setNome(rs.getString("nome"));
+                bonus.setData(rs.getString("data"));
                 bonus.setValor(rs.getDouble("valor"));
                 
                 listBonusDTO.add(bonus);
@@ -119,6 +120,7 @@ public class BonusDao {
                 bonus.setIdBonus(rs.getInt("idBonus"));
                 bonus.setIdFuncionario(rs.getInt("idFuncionario"));
                 bonus.setNome(rs.getString("nome"));
+                bonus.setData(rs.getString("data"));
                 bonus.setValor(rs.getDouble("valor"));
                 
                 listBonusDTO.add(bonus);
@@ -151,6 +153,7 @@ public class BonusDao {
                 bonus.setIdBonus(rs.getInt("idBonus"));
                 bonus.setIdFuncionario(rs.getInt("idFuncionario"));
                 bonus.setNome(rs.getString("nome"));
+                bonus.setData(rs.getString("data"));
                 bonus.setValor(rs.getDouble("valor"));
                 
                 listBonusDTO.add(bonus);

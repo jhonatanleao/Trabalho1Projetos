@@ -4,6 +4,8 @@
  */
 package dto;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author jhonatan
@@ -12,12 +14,14 @@ public class BonusDTO {
     private int idBonus;
     private int idFuncionario;
     private String nome;
+    private String data;
     private double valor;
 
-    public BonusDTO(int idBonus, int idFuncionario, String nome, double valor) {
+    public BonusDTO(int idBonus, int idFuncionario, String nome, String data, double valor) {
         this.idBonus = idBonus;
         this.idFuncionario = idFuncionario;
         this.nome = nome;
+        this.data = data;
         this.valor = valor;
     }
 
@@ -46,6 +50,14 @@ public class BonusDTO {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public double getValor() {

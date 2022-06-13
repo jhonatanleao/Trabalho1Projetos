@@ -21,7 +21,7 @@ public class BonusNormal implements IMetodoDeBonus{
     
     @Override
     public void calculaBonus(Funcionario funcionario) {
-        funcionario.setBonus(new Bonus("Normal", 0.005, LocalDate.now() ));
+        funcionario.setBonus(new Bonus("Normal", 0.005));
         
         this.proximo.calculaBonus(funcionario);
     }

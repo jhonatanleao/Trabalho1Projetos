@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class FuncionarioDao {
 
-    public void create(FuncionarioDTO funcionario, BonusDTO bonus){
+    public void create(FuncionarioDTO funcionario){
         Connection con = SqliteConnection.getConnection();
         PreparedStatement stmt = null;
 
