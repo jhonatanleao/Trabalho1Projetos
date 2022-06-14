@@ -15,6 +15,7 @@ import log.GerenciaLogService;
 import log.model.Log;
 import model.Bonus;
 import model.Funcionario;
+import View.TelaPrincipalView;
 
 public class TrabalhoProjeto {
 
@@ -30,7 +31,7 @@ public class TrabalhoProjeto {
         
         //log.alteraTipoPersistencia();
         //log.escreveArquivo();
-        
+        TelaPrincipalView start = new TelaPrincipalView();
         Funcionario funcionario = new Funcionario("Jose", 22, 0, 1280, "Programador", 2, 10, 3, 10, 0);
         
         CalculaBonus chainBonus = new CalculaBonus();
@@ -45,6 +46,8 @@ public class TrabalhoProjeto {
         CalculadoraSalarioService calculadoraService = new CalculadoraSalarioService();
         CalculaSalarioPadrao calculadora = new CalculaSalarioPadrao();
         calculadoraService.calculaSalario(calculadora, funcionario);
+        
+        start.setVisible(true);
         
         System.out.println(funcionario.getSalario() + " " + funcionario.getValorTotalBonus());
         

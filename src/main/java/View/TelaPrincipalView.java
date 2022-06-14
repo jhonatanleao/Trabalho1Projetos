@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
-
+import View.ManterFuncionarioView;
+import View.BuscarFuncionarioView;
 /**
  *
  * @author mathe
@@ -31,7 +32,8 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         jOptionPane1 = new javax.swing.JOptionPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        NovoFuncionario = new javax.swing.JMenuItem();
+        Funcionarios = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -44,13 +46,22 @@ public class TelaPrincipalView extends javax.swing.JFrame {
 
         jMenu1.setText("Funcionário");
 
-        jMenuItem2.setText("jMenuItem2");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        NovoFuncionario.setText("Novo Funcionário");
+        NovoFuncionario.setToolTipText("");
+        NovoFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                NovoFuncionarioActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(NovoFuncionario);
+
+        Funcionarios.setText("Funcionários");
+        Funcionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FuncionariosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Funcionarios);
 
         jMenuBar1.add(jMenu1);
 
@@ -76,9 +87,15 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void NovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovoFuncionarioActionPerformed
+        ManterFuncionarioView telaManterFuncionarios = new ManterFuncionarioView();
+        telaManterFuncionarios.setVisible(true);
+    }//GEN-LAST:event_NovoFuncionarioActionPerformed
+
+    private void FuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FuncionariosActionPerformed
+        BuscarFuncionarioView telaBuscarFuncionarios = new BuscarFuncionarioView();
+        telaBuscarFuncionarios.setVisible(true);
+    }//GEN-LAST:event_FuncionariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,13 +134,14 @@ public class TelaPrincipalView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Funcionarios;
+    private javax.swing.JMenuItem NovoFuncionario;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JOptionPane jOptionPane1;
     // End of variables declaration//GEN-END:variables
 }

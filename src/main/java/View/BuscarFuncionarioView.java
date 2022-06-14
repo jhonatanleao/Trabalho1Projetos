@@ -8,7 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-
+import javax.swing.table.DefaultTableModel;
+import presenter.FuncionarioPresenter;
+import dto.FuncionarioDTO;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author mathe
@@ -40,7 +44,7 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
     }
 
     public JTable getTblTabela() {
-        return tblTabela;
+        return TabelaFuncionarios;
     }
 
     public JTextField getTxtNome() {
@@ -51,6 +55,21 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
     
     public BuscarFuncionarioView() {
         initComponents();
+        
+        FuncionarioPresenter presenterfunc = new FuncionarioPresenter();
+        
+        List<FuncionarioDTO> listFuncionarioDTO = new ArrayList<>();
+        
+        listFuncionarioDTO = presenterfunc.readAll();
+        
+        DefaultTableModel tabela = (DefaultTableModel) TabelaFuncionarios.getModel();
+
+        
+        for(FuncionarioDTO funcionario:listFuncionarioDTO){
+            Object [] dados = {funcionario.getId(), funcionario.getNome(), funcionario.getCargo(), funcionario.getSalario(), funcionario.getQtdMembroFamilia()};
+            tabela.addRow(dados);
+        }
+            
     }
 
     /**
@@ -66,7 +85,7 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblTabela = new javax.swing.JTable();
+        TabelaFuncionarios = new javax.swing.JTable();
         btnFechar = new javax.swing.JButton();
         btnVisualizar = new javax.swing.JButton();
         btnVerBonus = new javax.swing.JButton();
@@ -78,8 +97,27 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
 
         btnBuscar.setText("Buscar");
 
-        tblTabela.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -92,7 +130,7 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Idade", "Função", "Salário base (R$)"
+                "ID", "Nome", "Cargo", "Salário", "Familiares"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -103,7 +141,10 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblTabela);
+        TabelaFuncionarios.setEditingColumn(0);
+        TabelaFuncionarios.setEditingRow(0);
+        TabelaFuncionarios.setShowGrid(false);
+        jScrollPane1.setViewportView(TabelaFuncionarios);
 
         btnFechar.setText("Fechar");
 
@@ -162,6 +203,7 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelaFuncionarios;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnFechar;
     private javax.swing.JButton btnNovo;
@@ -169,7 +211,6 @@ public class BuscarFuncionarioView extends javax.swing.JFrame {
     private javax.swing.JButton btnVisualizar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblTabela;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
